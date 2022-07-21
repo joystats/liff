@@ -39,6 +39,7 @@ function scanQrCodeButton() {
 	if (!liff.isInClient()) {
 	  alert('!liff.isInClient()')
 	} else {
+		alert(liff.scanCode)
 	  if (liff.scanCode) {
 		  liff.scanCode().then(result => {
 			  console.log(result)
