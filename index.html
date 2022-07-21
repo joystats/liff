@@ -29,6 +29,8 @@ async function init(){
 	if (liff.isLoggedIn()) {
 		let getProfile = await liff.getProfile();
 		console.log(getProfile)
+		let getFriendship = await liff.getFriendship()
+		console.log(getFriendship)
 	}else{
 		liff.login();
 	}
