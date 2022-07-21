@@ -20,7 +20,7 @@
 	<div class="col-md-6 offset-md-3">
 		<div class="row">
 			<h1>LIFF</h1>
-			<button onclick="scanCodeV2()">QR Code Reader</button>
+			<button onclick="scanQrCodeButton()">QR Code Reader</button>
 		</div>
 	</div>
 </div>
@@ -48,14 +48,6 @@ function scanQrCodeButton() {
 	}
 }
 
-async function scanCodeV2() {
-  try {
-	const result = await liff.scanCodeV2();
-	alert(result);
-  } catch(error) {
-	alert('error v2')
-  }
-}
 
 init();
 </script>
