@@ -29,12 +29,25 @@ async function init(){
 	if (liff.isLoggedIn()) {
 		let getProfile = await liff.getProfile();
 		console.log(getProfile)
-		let getFriendship = await liff.getFriendship()
-		console.log(getFriendship)
+		scanQrCodeButton()
 	}else{
 		liff.login();
 	}
 }
+
+function scanQrCodeButton() {
+	if (!liff.isInClient()) {
+	  alert('!liff.isInClient()')
+	} else {
+	  if (liff.scanCode) {
+		  liff.scanCode().then(result => {
+			  console.log(result)
+		  }).catch(err => {
+			 alert('error')
+		  });
+	  }
+	}
+  }
 
 init();
 </script>
